@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="GETCO" thread-count="1">
+	<listeners>
+	<listener 
+	class-name="com.qa.ExtentsReportListners.ExtentReportListner" />
+</listeners>
+	<test name="GETCO SANITY LOGIN">
+		<classes>
+			<class name="com.qa.getco.testcases.LoginPageTestcase" />
+		</classes>
+	</test>
+
+	<test name="GETCO SANITY HOMEPAGE">
+		<classes>
+			<class name="com.qa.getco.testcases.HomePageTestcases" />
+		</classes>
+	</test>
+
+	<!-- <test name="GETCO SANITY WEATHER FORECAST"> <classes> <class name="com.qa.getco.testcases.WeatherForecastTestcases" 
+		/> </classes> </test> -->
+
+	<test name="GETCO SANITY ERROR MATRICS DEMAND">
+		<classes>
+			<class
+				name="com.qa.getco.testcases.ErrormatricsTestcasesDemand" />
+		</classes>
+	</test>
+
+	<test name="GETCO SANITY ERROR MATRICS WIND">
+		<classes>
+			<class name="com.qa.getco.testcases.ErrormatricsTestcasesWind" />
+		</classes>
+	</test>
+
+	<test name="GETCO SANITY ERROR MATRICS SOLAR">
+		<classes>
+			<class name="com.qa.getco.testcases.ErrormatricsTestcasesSolar" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->

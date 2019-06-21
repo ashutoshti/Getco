@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [GETCO]">
+  <listeners>
+    <listener class-name="com.qa.ExtentsReportListners.ExtentReportListner"/>
+  </listeners>
+  <test thread-count="1" name="GETCO SANITY LOGIN(failed)">
+    <classes>
+      <class name="com.qa.getco.testcases.LoginPageTestcase">
+        <methods>
+          <include name="browserTearDown"/>
+          <include name="openbrowser"/>
+          <include name="applicationStarts"/>
+        </methods>
+      </class> <!-- com.qa.getco.testcases.LoginPageTestcase -->
+    </classes>
+  </test> <!-- GETCO SANITY LOGIN(failed) -->
+  <test thread-count="1" name="GETCO SANITY ERROR MATRICS DEMAND(failed)">
+    <classes>
+      <class name="com.qa.getco.testcases.ErrormatricsTestcasesDemand">
+        <methods>
+          <include name="browserTearDown"/>
+          <include name="openbrowser"/>
+          <include name="errorMatricsopen"/>
+        </methods>
+      </class> <!-- com.qa.getco.testcases.ErrormatricsTestcasesDemand -->
+    </classes>
+  </test> <!-- GETCO SANITY ERROR MATRICS DEMAND(failed) -->
+  <test thread-count="1" name="GETCO SANITY ERROR MATRICS WIND(failed)">
+    <classes>
+      <class name="com.qa.getco.testcases.ErrormatricsTestcasesWind">
+        <methods>
+          <include name="browserTearDown"/>
+          <include name="openbrowser"/>
+          <include name="errorMatricsopenWind"/>
+        </methods>
+      </class> <!-- com.qa.getco.testcases.ErrormatricsTestcasesWind -->
+    </classes>
+  </test> <!-- GETCO SANITY ERROR MATRICS WIND(failed) -->
+  <test thread-count="1" name="GETCO SANITY ERROR MATRICS SOLAR(failed)">
+    <classes>
+      <class name="com.qa.getco.testcases.ErrormatricsTestcasesSolar">
+        <methods>
+          <include name="browserTearDown"/>
+          <include name="errorMatricsopenSolar"/>
+          <include name="openbrowser"/>
+        </methods>
+      </class> <!-- com.qa.getco.testcases.ErrormatricsTestcasesSolar -->
+    </classes>
+  </test> <!-- GETCO SANITY ERROR MATRICS SOLAR(failed) -->
+</suite> <!-- Failed suite [GETCO] -->
