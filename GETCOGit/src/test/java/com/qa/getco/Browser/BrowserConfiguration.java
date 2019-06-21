@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 
 import com.qa.getco.utility.TestUtil;
 import com.qa.getco.utility.WebEventListener;
@@ -50,7 +51,7 @@ public class BrowserConfiguration {
 		driver.get(properties.getProperty("url"));
 	}
 
-	@AfterMethod()
+	@AfterSuite()
 	public void browserTearDown() {
 		driver.quit();
 	}
