@@ -12,21 +12,17 @@ import java.util.List;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import com.qa.base.TestBase;
 import com.qa.client.RestClient;
 import com.qa.data.BodyofAPI;
-import com.qa.getco.utility.*;;
+import com.qa.getco.utility.TestUtil;;
 
 public class POSTAPITest extends TestBase {
 	TestBase testBase;

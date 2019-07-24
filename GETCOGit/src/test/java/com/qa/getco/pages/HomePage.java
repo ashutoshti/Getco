@@ -31,6 +31,9 @@ public class HomePage extends BrowserConfiguration{
 	@FindBy(xpath="//a[contains(text(),'Error Matrices')]")
 	WebElement ErrorMatrices;
 	
+	@FindBy(linkText="Forecasted Schedule")
+	WebElement forecastedSchedule;
+	
 	
 	public String getTitle() {
 		return pagetitle.getText();
@@ -54,5 +57,13 @@ public class HomePage extends BrowserConfiguration{
 		Schedule.click();
 		ErrorMatrices.click();
 		return new ErrorMatricsPage();
+	}
+	
+	public ForecastedSchedulePage openForecastedSchedule() {
+		JavascriptExecutor jse=(JavascriptExecutor) driver;
+		jse.executeScript("arguments[0].scrollIntoView();", Schedule);
+		Schedule.click();
+		forecastedSchedule.click();
+		return new ForecastedSchedulePage();
 	}
 }

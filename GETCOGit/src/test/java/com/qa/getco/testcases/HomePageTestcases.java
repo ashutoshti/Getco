@@ -39,8 +39,13 @@ public class HomePageTestcases extends BrowserConfiguration {
 		return new WeatherForecast();
 	}
 
-	@Test
+	@Test(enabled=false)
 	public void TestErrorMatrices() {
 		homePage.openErrorMatrics();
+	}
+	
+	@Test
+	public void TestForecastedSchedule() {
+		homePage.openForecastedSchedule();
 	}
 }

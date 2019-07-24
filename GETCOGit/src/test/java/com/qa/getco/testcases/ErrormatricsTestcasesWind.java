@@ -37,6 +37,7 @@ public class ErrormatricsTestcasesWind extends BrowserConfiguration {
 	@Test(priority=2)
 	public void errorMatricsopenWind() {
 		errorMatricsPage.ErrorMatricsWind();
+		errorMatricsPage.deleteFile();
 	}
 }
 

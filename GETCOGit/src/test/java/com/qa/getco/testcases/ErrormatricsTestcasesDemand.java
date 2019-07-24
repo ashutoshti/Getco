@@ -1,5 +1,7 @@
 package com.qa.getco.testcases;
 
+import java.util.concurrent.TimeUnit;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -32,10 +34,12 @@ public class ErrormatricsTestcasesDemand extends BrowserConfiguration {
 	public void verifyingPage() {
 		String name=errorMatricsPage.verifyPage();
 		Assert.assertEquals("Error Matrices", name);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
 	@Test(priority=2)
 	public void errorMatricsopen() {
 		errorMatricsPage.ErrorMatricsDemand();
+		errorMatricsPage.deleteFile();
 	}
 }

@@ -6,7 +6,6 @@
       <class name="com.qa.getco.testcases.ErrormatricsTestcasesDemand">
         <methods>
           <include name="browserTearDown"/>
-          <include name="verifyingPage"/>
           <include name="openbrowser"/>
           <include name="errorMatricsopen"/>
         </methods>

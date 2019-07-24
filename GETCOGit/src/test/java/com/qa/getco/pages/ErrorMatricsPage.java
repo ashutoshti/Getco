@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.DecimalFormat;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -101,18 +102,13 @@ public class ErrorMatricsPage extends BrowserConfiguration {
 
 		/*** Select The Utility ***/
 		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+			Thread.sleep(10000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
 		}
 		filterButton.click();
 		selectUtilityDropDown.click();
-		// inputUtilityTextBox.sendKeys(properties.getProperty("utilityName"));
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		selectUtilityName.click();
 
 		/*** Select The Date ***/
@@ -560,6 +556,7 @@ public class ErrorMatricsPage extends BrowserConfiguration {
 			}
 		} catch (Exception e) {
 			System.out.println("Why im Here");
+			System.exit(0);
 		}
 	}
 
@@ -695,6 +692,8 @@ public class ErrorMatricsPage extends BrowserConfiguration {
 			}
 		} catch (Exception e) {
 			System.out.println("Why im Here");
+			System.exit(0);
+
 		}
 	}
 
@@ -895,6 +894,8 @@ public class ErrorMatricsPage extends BrowserConfiguration {
 			}
 		} catch (Exception e) {
 			System.out.println("Why im Here");
+			System.exit(0);
+
 		}
 	}
 
@@ -1015,22 +1016,22 @@ public class ErrorMatricsPage extends BrowserConfiguration {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		File file1 = new File("C:\\Users\\Manikaran\\Downloads\\Power_Forecast_Vs_Actual_Consumption.csv");
-		File file2 = new File("C:\\Users\\Manikaran\\Downloads\\NMAE_&_NMAPE.csv");
-		File file3 = new File("C:\\Users\\Manikaran\\Downloads\\NRMSE_&_NPRMSE.csv");
-		try {
-			if (!file1.exists() || !file2.exists() || !file3.exists()) {
-				System.out.println("File Not Found");
-			} else {
-				file1.delete();
-				file2.delete();
-				file3.delete();
-				System.out.println("File Deleted");
-			}
-		} catch (Exception e) {
-			System.out.println("Why im Here");
-		}
 	}
 
+	public void deleteFile() {
+		String home = System.getProperty("user.home");
+		File file_Power_Forecast_Vs_Actual_Consumption = new File(home+"\\Downloads\\Power_Forecast_Vs_Actual_Consumption.csv"); 
+		File file_NMAE_AND_NMAPE = new File(home+"\\Downloads\\NMAE_&_NMAPE.csv"); 
+		File file_NRMSE_AND_NPRMSE = new File(home+"\\Downloads\\NRMSE_&_NPRMSE.csv");
+		if (file_Power_Forecast_Vs_Actual_Consumption.exists()&&file_NMAE_AND_NMAPE.exists()&&file_NRMSE_AND_NPRMSE.exists()) {
+			
+			file_Power_Forecast_Vs_Actual_Consumption.deleteOnExit();
+			file_NMAE_AND_NMAPE.deleteOnExit();
+			file_NRMSE_AND_NPRMSE.deleteOnExit();
+			
+			System.out.println("=====> File Deleted<=====");
+		} else {
+			System.out.println("=====> File NOT Found<=====");
+		}
+	}
 }

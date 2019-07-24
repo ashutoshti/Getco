@@ -10,7 +10,6 @@
 			<class name="com.qa.getco.testcases.LoginPageTestcase" />
 		</classes>
 	</test>
-
 	<test name="GETCO SANITY HOMEPAGE">
 		<classes>
 			<class name="com.qa.getco.testcases.HomePageTestcases" />
@@ -38,5 +37,10 @@
 			<class name="com.qa.getco.testcases.ErrormatricsTestcasesSolar" />
 		</classes>
 	</test>
-
+	
+		<test name="GETCO SANITY FORECASTEDSCHEDULE">
+		<classes>
+			<class name="com.qa.getco.testcases.ForecastedScheduleTestcase" />
+		</classes>
+	</test>
 </suite> <!-- Suite -->

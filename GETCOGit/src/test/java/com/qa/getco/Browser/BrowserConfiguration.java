@@ -6,9 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 
 import com.qa.getco.utility.TestUtil;
@@ -35,15 +33,21 @@ public class BrowserConfiguration {
 	}
 
 	public void browserTearUp() {
-		ChromeOptions options=new ChromeOptions();
-		options.addArguments("headless");
-		options.addArguments("window-size=1200x600");
-		driver=new ChromeDriver(options);
-/*		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();*/
-		e_driver = new EventFiringWebDriver(driver); eventListener = new
-		WebEventListener(); e_driver.register(eventListener); driver = e_driver;
-		 
+		/*
+		 * ChromeOptions options=new ChromeOptions(); options.addArguments("headless");
+		 * options.addArguments("window-size=1200x600");
+		 * driver=new ChromeDriver(options);
+		 */
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		
+		//Trace Driver Presence
+		//e_driver = new EventFiringWebDriver(driver); 
+		//eventListener = new WebEventListener(); 
+		//e_driver.register(eventListener); 
+		//driver = e_driver;
+		
+		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
@@ -51,7 +55,7 @@ public class BrowserConfiguration {
 		driver.get(properties.getProperty("url"));
 	}
 
-	@AfterSuite()
+	@AfterSuite
 	public void browserTearDown() {
 		driver.quit();
 	}

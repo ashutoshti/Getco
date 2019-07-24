@@ -4,17 +4,6 @@
   <listeners>
     <listener class-name="com.qa.ExtentsReportListners.ExtentReportListner"/>
   </listeners>
-  <test thread-count="1" name="GETCO SANITY LOGIN(failed)">
-    <classes>
-      <class name="com.qa.getco.testcases.LoginPageTestcase">
-        <methods>
-          <include name="browserTearDown"/>
-          <include name="openbrowser"/>
-          <include name="applicationStarts"/>
-        </methods>
-      </class> <!-- com.qa.getco.testcases.LoginPageTestcase -->
-    </classes>
-  </test> <!-- GETCO SANITY LOGIN(failed) -->
   <test thread-count="1" name="GETCO SANITY ERROR MATRICS DEMAND(failed)">
     <classes>
       <class name="com.qa.getco.testcases.ErrormatricsTestcasesDemand">
@@ -48,4 +37,15 @@
       </class> <!-- com.qa.getco.testcases.ErrormatricsTestcasesSolar -->
     </classes>
   </test> <!-- GETCO SANITY ERROR MATRICS SOLAR(failed) -->
+  <test thread-count="1" name="GETCO SANITY FORECASTEDSCHEDULE(failed)">
+    <classes>
+      <class name="com.qa.getco.testcases.ForecastedScheduleTestcase">
+        <methods>
+          <include name="browserTearDown"/>
+          <include name="TestForecastedSchedule"/>
+          <include name="openbrowser"/>
+        </methods>
+      </class> <!-- com.qa.getco.testcases.ForecastedScheduleTestcase -->
+    </classes>
+  </test> <!-- GETCO SANITY FORECASTEDSCHEDULE(failed) -->
 </suite> <!-- Failed suite [GETCO] -->

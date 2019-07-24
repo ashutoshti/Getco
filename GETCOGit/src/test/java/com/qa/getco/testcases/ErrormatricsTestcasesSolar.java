@@ -37,5 +37,6 @@ public class ErrormatricsTestcasesSolar extends BrowserConfiguration {
 	@Test(priority=2)
 	public void errorMatricsopenSolar() {
 		errorMatricsPage.ErrorMatricsSolar();
+		errorMatricsPage.deleteFile();
 	}
 }
